@@ -249,69 +249,64 @@
     </div>
   </footer>
 
-  <script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script>
+$(document).ready(function() {
     
-document.addEventListener("DOMContentLoaded", () => {
+   
+    $('.footer__up-link, .header__link[href="#products"], a[href="#"]').on('click', function(e) {
+        e.preventDefault(); 
+        
+        $('html, body').animate({
+            scrollTop: 0
+        }, 800); 
+    });
+
+
+   
     const speed = 80; 
 
-    const animateCounter = (counter) => {
-        const target = +counter.getAttribute('data-target');
-        
-        const count = +counter.innerText.replace('+', ''); 
+    function animateCounter(counter) {
+        const $counter = $(counter);
+        const target = +$counter.attr('data-target');
+        const count = +$counter.text().replace('+', '');
         const increment = Math.ceil(target / speed);
 
         if (count < target) {
             let nextVal = count + increment;
-            if (nextVal > target) nextVal = target; 
+            if (nextVal > target) nextVal = target;
+
+            $counter.text(nextVal);
             
-            counter.innerText = nextVal;
-            setTimeout(() => animateCounter(counter), 25);
+            
+            setTimeout(function() {
+                animateCounter(counter);
+            }, 25);
         } else {
-            counter.innerText = target;
+            $counter.text(target);
         }
-    };
+    }
 
-    document.querySelectorAll('.stats__num').forEach(counter => {
-      
-        if (counter.nextSibling && counter.nextSibling.textContent.includes("Преміум")) {
-            counter.setAttribute('data-target', '200');
-        } else if (counter.nextSibling && counter.nextSibling.textContent.includes("Щасливих")) {
-            counter.setAttribute('data-target', '850');
-        }
-        
-        counter.innerText = "0"; 
-        animateCounter(counter);
-    });
-});
-
- 
-    document.querySelectorAll('.card__btn').forEach(button => {
-        button.addEventListener('click', (e) => {
-            const card = e.target.closest('.card');
-            const productName = card.querySelector('.card__title').innerText;
-            const productPrice = card.querySelector('.card__price').innerText;
-            
-            alert(`Товар додано в кошик!\nНапій: ${productName}\nЦіна: ${productPrice}\nДякуємо за замовлення!`);
-        });
-    });
-
-    document.addEventListener("DOMContentLoaded", () => {
     
+    $('.stats__num').each(function() {
+        const $this = $(this);
+        const textContext = $this.parent().text();
 
-  
-    const topLinks = document.querySelectorAll('.footer__up-link, a[href="#"], .header__link[href="#products"]');
+       
+        if (textContext.includes("Преміум")) {
+            $this.attr('data-target', '200');
+        } else if (textContext.includes("Щасливих")) {
+            $this.attr('data-target', '850');
+        } else if (textContext.includes("Виграних")) {
+            $this.attr('data-target', '28');
+        }
 
-    topLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault(); 
-            
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth' 
-            });
-        });
+        $this.text('0'); 
+        animateCounter(this);
     });
+
 });
-  </script>
+</script>
 </body>
 </html>
