@@ -252,44 +252,38 @@
 
   <script>
     
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
+document.addEventListener("DOMContentLoaded", () => {
+    const speed = 80; // Швидкість анімації (чим менше, тим швидше)
+
+    const animateCounter = (counter) => {
+        const target = +counter.getAttribute('data-target');
+        // Отримуємо поточне значення, очищуючи його від зайвих знаків
+        const count = +counter.innerText.replace('+', ''); 
+        const increment = Math.ceil(target / speed);
+
+        if (count < target) {
+            let nextVal = count + increment;
+            if (nextVal > target) nextVal = target; // Запобігаємо перекручуванню
+            
+            counter.innerText = nextVal;
+            setTimeout(() => animateCounter(counter), 25);
+        } else {
+            counter.innerText = target;
+        }
+    };
+
+    document.querySelectorAll('.stats__num').forEach(counter => {
+        // Оновлюємо data-target відповідно до нових чисел на скріншоті
+        if (counter.nextSibling && counter.nextSibling.textContent.includes("Преміум")) {
+            counter.setAttribute('data-target', '451');
+        } else if (counter.nextSibling && counter.nextSibling.textContent.includes("Щасливих")) {
+            counter.setAttribute('data-target', '641');
+        }
+        
+        counter.innerText = "0"; // Стартуємо з нуля
+        animateCounter(counter);
     });
-
-   
-    document.addEventListener("DOMContentLoaded", () => {
-        const speed = 100; 
-
-        const animateCounter = (counter) => {
-            const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText.replace('k', '').replace('+', '');
-            const increment = target / speed;
-
-            if (count < target) {
-                let currentVal = Math.ceil(count + increment);
-                if (currentVal >= 1000) {
-                    counter.innerText = Math.floor(currentVal / 1000) + 'k+';
-                } else {
-                    counter.innerText = currentVal;
-                }
-                setTimeout(() => animateCounter(counter), 20);
-            } else {
-                counter.innerText = target >= 1000 ? (target / 1000) + 'k+' : target;
-            }
-        };
-
-        document.querySelectorAll('.stats__num').forEach(counter => {
-            animateCounter(counter);
-        });
-    });
+});
 
  
     document.querySelectorAll('.card__btn').forEach(button => {
