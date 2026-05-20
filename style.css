@@ -651,18 +651,23 @@ a:hover, button:hover {
 }
 
 .event {
-  padding: 45px 30px 20px;
+  padding: 35px 30px 25px; /* Трохи скоригували паддінги для балансу */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 30px;
+  
+  /* МАГІЯ ТУТ: Робимо картку флексом */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Рівномірно розподіляє заголовок вгорі, а кнопку внизу */
+  align-items: flex-start; /* Вирівнює кнопку по лівому краю */
 }
 
 .event__title {
-  margin-bottom: 50px;
-
-  max-width: 294px;
-
+  margin-bottom: 20px; /* Замість великого 50px робимо гнучкий відступ */
+  max-width: 100%; /* Дозволяємо тексту розгортатися безпечно */
+  
   font-weight: 500;
   font-size: 32px;
   line-height: 109%;
@@ -1389,6 +1394,18 @@ a:hover, button:hover {
   }
 }
 
+@media (max-width: 740px) {
+  .event {
+    padding: 20px 15px;
+    align-items: center; \
+  }
+
+  .event__title {
+    margin-bottom: 15px;
+    font-size: 18px;
+    max-width: 160px;
+  }
+}
 @media (max-width: 500px) {
   .history__text::before {
     width: 550px;
