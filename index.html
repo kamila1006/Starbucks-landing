@@ -89,7 +89,7 @@
 
         <div class="history__text">
           <h2 class="title history__title">Ми робимо <span class="text-gradient">незабутньо</span></h2>
-          <p class="history__desc">Лише за 2025 рік ми виконали понад 100 000 замовлень для вас та ваших близьких, а у 2026 році ми готові підкорювати нові вершини!</p>
+          <p class="history__desc">Лише за 2025 рік ми виконали понад 10 000 замовлень для вас та ваших близьких, а у 2026 році ми готові підкорювати нові вершини!</p>
           <img src="./images/kitchen.jpg" alt="Наша кухня" class="history__pic">
         </div>
       </div>
@@ -162,7 +162,7 @@
       <div class="container">
         <div class="text-row text-row--reverse">
           <h2 class="title text-row__title">Наші нові <span class="text-gradient">Події</span></h2>
-          <p class="text-row__desc">Лише за 2025 рік ми приготували понад 100 000 замовлень для вас, а у 2026 році ми готові дивувати вас ще більше</p>
+          <p class="text-row__desc">Лише за 2025 рік ми приготували понад 10 000 замовлень для вас, а у 2026 році ми готові дивувати вас ще більше</p>
         </div>
 
         <div class="events__inner-wrapper">
@@ -226,8 +226,7 @@
           </div>
           <div class="footer__nav-col">
             <a href="#!" class="footer__nav-link">Продукти</a>
-            <a href="#!" class="footer__nav-link">Капучино</a>
-            <a href="#!" class="footer__nav-link">Швидко</a>
+            <a href="#!" class="footer__nav-link">Капучино</a> 
             <a href="#!" class="footer__nav-link">Латте</a>
           </div>
           <div class="footer__nav-col">
@@ -253,17 +252,17 @@
   <script>
     
 document.addEventListener("DOMContentLoaded", () => {
-    const speed = 80; // Швидкість анімації (чим менше, тим швидше)
+    const speed = 80; 
 
     const animateCounter = (counter) => {
         const target = +counter.getAttribute('data-target');
-        // Отримуємо поточне значення, очищуючи його від зайвих знаків
+        
         const count = +counter.innerText.replace('+', ''); 
         const increment = Math.ceil(target / speed);
 
         if (count < target) {
             let nextVal = count + increment;
-            if (nextVal > target) nextVal = target; // Запобігаємо перекручуванню
+            if (nextVal > target) nextVal = target; 
             
             counter.innerText = nextVal;
             setTimeout(() => animateCounter(counter), 25);
