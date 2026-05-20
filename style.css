@@ -78,8 +78,15 @@ a:hover, button:hover {
   -webkit-text-fill-color: transparent;
 }
 
+/* ВИПРАВЛЕНО: Кнопка тепер є флекс-контейнером, текст не переноситься */
 .btn {
-  padding: 20px 80px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+
+  padding: 0 45px;
+  height: 70px;
 
   border-radius: 83px;
   background: linear-gradient(210deg, #237249 0%, #35c66b 100%);
@@ -90,8 +97,15 @@ a:hover, button:hover {
   color: #fff;
 }
 
+/* ВИПРАВЛЕНО: Посилання тепер є флекс-контейнером, текст чітко по центру */
 .link {
-  padding: 20px 55px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+
+  padding: 0 45px;
+  height: 70px;
 
   background: #121517;
   border: 1px solid #dadada;
@@ -215,7 +229,7 @@ a:hover, button:hover {
 .stats__item {
   display: flex;
   flex-direction: column;
-  width: 140px; /* Трохи збільшено під 3-значні числа */
+  width: 140px; /* Трішки збільшено під 3-значні числа */
   line-height: 130%;
 }
 
@@ -533,7 +547,7 @@ a:hover, button:hover {
   z-index: -5;
   background: rgb(218,218,218);
   background: linear-gradient(110deg, rgba(218,218,218,0.7) 0%, rgba(218,218,218,0.07) 42%, rgba(218,218,218,0.7) 100%);
-  
+   
   border-radius: 30px;
 }
 
@@ -656,7 +670,7 @@ a:hover, button:hover {
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 30px;
-  
+   
   /* МАГІЯ ТУТ: Робимо картку флексом */
   display: flex;
   flex-direction: column;
@@ -667,7 +681,7 @@ a:hover, button:hover {
 .event__title {
   margin-bottom: 20px; /* Замість великого 50px робимо гнучкий відступ */
   max-width: 100%; /* Дозволяємо тексту розгортатися безпечно */
-  
+   
   font-weight: 500;
   font-size: 32px;
   line-height: 109%;
@@ -832,7 +846,7 @@ a:hover, button:hover {
   text-align: center;
   color: #fff;
   transform: translate(-50%, -50%);
-  background-image: url(./images/icons/star.svg);
+  background-image: url("./images/icons/star.svg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -929,7 +943,7 @@ a:hover, button:hover {
     flex-direction: column-reverse;
     gap: 30px;
   }
-  
+   
   .welcome__img-wrapper::before {
     width: 550px;
     height: 550px;
@@ -1079,15 +1093,18 @@ a:hover, button:hover {
     margin-bottom: 35px;
   }
 
+  /* ВИПРАВЛЕНО: Адаптовані кнопки під мобільні екрани без перекосів */
   .btn {
     font-size: 16px;
-    padding: 15px 50px;
+    padding: 0 30px;
+    height: 50px;
     border-radius: 55px;
   }
 
   .link {
     font-size: 16px;
-    padding: 15px 35px;
+    padding: 0 30px;
+    height: 50px;
     border-radius: 55px;
   }
 
@@ -1397,7 +1414,7 @@ a:hover, button:hover {
 @media (max-width: 740px) {
   .event {
     padding: 20px 15px;
-    align-items: center; \
+    align-items: center; 
   }
 
   .event__title {
@@ -1406,6 +1423,7 @@ a:hover, button:hover {
     max-width: 160px;
   }
 }
+
 @media (max-width: 500px) {
   .history__text::before {
     width: 550px;
