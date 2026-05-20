@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
 
-/* 
-Regular 400
+/* Regular 400
 Medium 500
 SemiBold 600
 ExtraBold 800
@@ -31,6 +30,7 @@ body {
 
 img {
   max-width: 100%;
+  height: auto; /* Фікс для пропорцій картинок */
 }
 
 h1, h2, h3 {
@@ -102,7 +102,6 @@ a:hover, button:hover {
   color: #d9d9d9;
 }
 
-
 .text-row {
   display: flex;
   align-items: center;
@@ -139,11 +138,6 @@ a:hover, button:hover {
 .text-row__desc {
   width: 455px;
 }
-
-
-
-
-
 
 .header {
   padding: 50px 0;
@@ -211,16 +205,18 @@ a:hover, button:hover {
   margin-bottom: 55px;
 }
 
-
-
+/* ФІКС БЛОКУ СТАТИСТИКИ */
 .stats {
   display: flex;
   gap: 45px;
+  flex-wrap: wrap; /* Щоб не вилітало на середніх екранах */
 }
 
 .stats__item {
-  width: 126px;
-  line-height: 144%;
+  display: flex;
+  flex-direction: column;
+  width: 140px; /* Трохи збільшено під 3-значні числа */
+  line-height: 130%;
 }
 
 .stats__num {
@@ -228,6 +224,7 @@ a:hover, button:hover {
   line-height: 109%;
   letter-spacing: -0.03em;
   color: #fff;
+  font-weight: 700;
 }
 
 .stats__num::after {
@@ -277,10 +274,8 @@ a:hover, button:hover {
 
 .welcome__img {
   width: 470px;
-
   animation: moveCup 1.5s infinite alternate ease-in-out;
 }
-
 
 @keyframes moveCup {
   0% {
@@ -290,8 +285,6 @@ a:hover, button:hover {
     transform: translateY(-20px);
   }
 }
-
-
 
 .benefits {
   margin-top: 110px;
@@ -328,7 +321,6 @@ a:hover, button:hover {
 
 .benefits__container::after {
   content: "we\Ahave";
-
   white-space: pre-wrap; 
 
   position: absolute;
@@ -398,7 +390,6 @@ a:hover, button:hover {
 .benefits__heart {
   top: calc(50% + 10px);
   left: calc(50% + 5px);
-
 }
 .benefits__rocket {
   width: 210px;
@@ -424,8 +415,6 @@ a:hover, button:hover {
   margin-top: 135px;
   padding-bottom: 25px;
 }
-
-
 
 .history .container {
   display: flex;
@@ -454,7 +443,6 @@ a:hover, button:hover {
 
   background: #237249;
 }
-
 
 .history__img {
   width: 465px;
@@ -514,15 +502,9 @@ a:hover, button:hover {
   clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 23%, 11% 0);
 }
 
-
-
-
-
-
 .products {
   margin-top: 100px;
 }
-
 
 .products__cards {
   display: flex;
@@ -616,21 +598,15 @@ a:hover, button:hover {
   color: #fff;
 }
 
-
 .card__btn {
   width: 100%;
   padding: 15px 0;
   font-size: 17px;
 }
 
-
-
-
 .events {
   margin-top: 100px;
 }
-
-
 
 .events__inner-wrapper {
   display: grid;
@@ -723,8 +699,6 @@ a:hover, button:hover {
   background-image: url("./images/events/5.png");
   grid-area: choose;
 }
-
-
 
 .contacts {
   overflow: hidden;
@@ -864,8 +838,6 @@ a:hover, button:hover {
   clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%, 0 26%);
 }
 
-
-
 .footer {
   padding: 40px 0;
   background-color: #0b0c0d;
@@ -921,7 +893,7 @@ a:hover, button:hover {
   font-size: 26px;
 }
 
-
+/* АДАПТИВНІ МЕДІА ЗАПИТИ */
 @media (max-width: 1140px) {
   .benefits__container::after {
     left: 50px;
@@ -937,8 +909,6 @@ a:hover, button:hover {
                           "free social"
                           "kitchen choose";
   }
-
-
 }
 
 @media (max-width: 1000px) {
@@ -1054,7 +1024,6 @@ a:hover, button:hover {
   }
 }
 
-
 @media (max-width: 740px) {
   body {
     font-size: 14px;
@@ -1138,18 +1107,21 @@ a:hover, button:hover {
     filter: blur(60px);
   }
 
+  /* ТУТ ВИПРАВЛЕНО НАПЛИВАННЯ ТЕКСТУ В СТАТИСТИЦІ */
   .stats {
-    gap: 30px;
+    gap: 20px 15px;
+    justify-content: center;
   }
 
   .stats__item { 
-    width: 85px;
+    width: 100px;
+    text-align: center;
+    font-size: 12px;
   }
 
   .stats__num {
-    font-size: 40px;
+    font-size: 34px;
   }
-
 
   .benefits {
     margin-top: 65px;
@@ -1415,7 +1387,6 @@ a:hover, button:hover {
   .footer__phone {
     font-size: 16px;
   }
-  
 }
 
 @media (max-width: 500px) {
@@ -1426,7 +1397,6 @@ a:hover, button:hover {
     bottom: -240px;
   }
 }
-
 
 @media (max-width: 400px) {
   .header__link + .header__link {
