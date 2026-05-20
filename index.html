@@ -273,14 +273,14 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     document.querySelectorAll('.stats__num').forEach(counter => {
-        // Оновлюємо data-target відповідно до нових чисел на скріншоті
+      
         if (counter.nextSibling && counter.nextSibling.textContent.includes("Преміум")) {
-            counter.setAttribute('data-target', '451');
+            counter.setAttribute('data-target', '4000');
         } else if (counter.nextSibling && counter.nextSibling.textContent.includes("Щасливих")) {
-            counter.setAttribute('data-target', '641');
+            counter.setAttribute('data-target', '13000');
         }
         
-        counter.innerText = "0"; // Стартуємо з нуля
+        counter.innerText = "0"; 
         animateCounter(counter);
     });
 });
@@ -292,9 +292,27 @@ document.addEventListener("DOMContentLoaded", () => {
             const productName = card.querySelector('.card__title').innerText;
             const productPrice = card.querySelector('.card__price').innerText;
             
-            alert(`Товар додано в кошик!\nНапій: ${productName}\nЦіна: ${productPrice}\nДякуємо за замовлення ліцею "ОСНОВА"!`);
+            alert(`Товар додано в кошик!\nНапій: ${productName}\nЦіна: ${productPrice}\nДякуємо за замовлення!`);
         });
     });
+
+    document.addEventListener("DOMContentLoaded", () => {
+    
+
+  
+    const topLinks = document.querySelectorAll('.footer__up-link, a[href="#"], .header__link[href="#products"]');
+
+    topLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault(); 
+            
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' 
+            });
+        });
+    });
+});
   </script>
 </body>
 </html>
