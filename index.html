@@ -274,9 +274,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('.stats__num').forEach(counter => {
       
         if (counter.nextSibling && counter.nextSibling.textContent.includes("Преміум")) {
-            counter.setAttribute('data-target', '4000');
+            counter.setAttribute('data-target', '200');
         } else if (counter.nextSibling && counter.nextSibling.textContent.includes("Щасливих")) {
-            counter.setAttribute('data-target', '13000');
+            counter.setAttribute('data-target', '850');
         }
         
         counter.innerText = "0"; 
