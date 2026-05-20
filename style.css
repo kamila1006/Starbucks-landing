@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
 
-/* Regular 400
-Medium 500
-SemiBold 600
-ExtraBold 800
-*/
-
 * {
   box-sizing: border-box;
 }
@@ -18,19 +12,17 @@ html {
 body {
   overflow-x: hidden;
   margin: 0;
-
   font-family: "Montserrat", serif;
   color: #D9D9D9;
   font-size: 20px;
   line-height: 163%;
   letter-spacing: -0.02em;
-  
   background-color: #121517;
 }
 
 img {
   max-width: 100%;
-  height: auto; /* Фікс для пропорцій картинок */
+  height: auto;
 }
 
 h1, h2, h3 {
@@ -78,39 +70,31 @@ a:hover, button:hover {
   -webkit-text-fill-color: transparent;
 }
 
-/* ВИПРАВЛЕНО: Кнопка тепер є флекс-контейнером, текст не переноситься */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
-
   padding: 0 45px;
   height: 70px;
-
   border-radius: 83px;
   background: linear-gradient(210deg, #237249 0%, #35c66b 100%);
-
   font-weight: 639;
   font-size: 24px;
   letter-spacing: -0.02em;
   color: #fff;
 }
 
-/* ВИПРАВЛЕНО: Посилання тепер є флекс-контейнером, текст чітко по центру */
 .link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
-
   padding: 0 45px;
   height: 70px;
-
   background: #121517;
   border: 1px solid #dadada;
   border-radius: 83px;
-
   font-size: 24px;
   letter-spacing: -0.03em;
   color: #d9d9d9;
@@ -120,7 +104,6 @@ a:hover, button:hover {
   display: flex;
   align-items: center;
   gap: 70px;
-
   margin-bottom: 60px;
 }
 
@@ -135,15 +118,12 @@ a:hover, button:hover {
 
 .text-row__title::before {
   content: "";
-
   position: absolute;
   right: 60px;
   top: 20px;
   z-index: -5;
-
   width: 140px;
   height: 140px;
-
   border-radius: 100%;
   background: linear-gradient(245deg, rgba(35, 114, 73, 0.55) 0%, rgba(53, 198, 107, 0.73) 51.85%);
   filter: blur(90px);
@@ -195,15 +175,12 @@ a:hover, button:hover {
 
 .welcome__title::before {
   content: "";
-
   position: absolute;
   left: 40px;
   top: 80px;
   z-index: -5;
-
   width: 140px;
   height: 140px;
-
   border-radius: 100%;
   background: linear-gradient(245deg, rgba(35, 114, 73, 0.55) 0%, rgba(53, 198, 107, 0.73) 51.85%);
   filter: blur(90px);
@@ -219,17 +196,16 @@ a:hover, button:hover {
   margin-bottom: 55px;
 }
 
-/* ФІКС БЛОКУ СТАТИСТИКИ */
 .stats {
   display: flex;
   gap: 45px;
-  flex-wrap: wrap; /* Щоб не вилітало на середніх екранах */
+  flex-wrap: wrap;
 }
 
 .stats__item {
   display: flex;
   flex-direction: column;
-  width: 140px; /* Трішки збільшено під 3-значні числа */
+  width: 140px;
   line-height: 130%;
 }
 
@@ -258,12 +234,10 @@ a:hover, button:hover {
   content: "";
   width: 860px;
   height: 620px;
-
   position: absolute;
   right: -230px;
   bottom: -180px;
   z-index: -10;
-
   background-image: url("./images/icons/lines.svg");
   background-size: contain;
   background-position: center;
@@ -272,15 +246,12 @@ a:hover, button:hover {
 
 .welcome__img-wrapper::after {
   content: "";
-
   position: absolute;
   right: 130px;
   bottom: 60px;
   z-index: -5;
-
   width: 300px;
   height: 300px;
-
   border-radius: 100%;
   background: linear-gradient(245deg, rgba(35, 114, 73, 0.55) 0%, rgba(53, 198, 107, 0.73) 51.85%);
   filter: blur(170px);
@@ -310,12 +281,9 @@ a:hover, button:hover {
   max-width: 1030px;
   padding-top: 55px;
   padding-bottom: 25px;
-
   position: relative;
-
   display: flex;
   justify-content: space-around;
-
   background: linear-gradient(230deg, #fff 3.94%, #e5e5e5 64.08%, #fbfbfb 88.62%);
   border-radius: 46px;
 }
@@ -336,28 +304,21 @@ a:hover, button:hover {
 .benefits__container::after {
   content: "we\Ahave";
   white-space: pre-wrap; 
-
   position: absolute;
   top: 15px;
   left: 15px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   z-index: 10;
-
   width: 200px;
   height: 200px;
-
   font-weight: 500;
   font-size: 32px;
   text-transform: uppercase;
   text-align: center;
   color: #fff;
-
   transform: translate(-50%, -50%);
-
   background-image: url("./images/icons/star.svg");
   background-size: contain;
   background-position: center;
@@ -373,9 +334,7 @@ a:hover, button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-
   position: relative;
-
   margin-bottom: 30px;
 }
 
@@ -384,7 +343,6 @@ a:hover, button:hover {
   display: block;
   width: 150px;
   height: 150px;
-
   border-radius: 100%;
   background: linear-gradient(245deg, #237249 0%, #35c66b 100%);
   box-shadow: 0 4px 41px 0 rgba(0, 0, 0, 0.39);
@@ -392,12 +350,10 @@ a:hover, button:hover {
 
 .benefits__icon {
   width: 146px;
-
   position: absolute;
   top: 50%;
   left: 50%;
   z-index: 5;
-
   transform: translate(-50%, -50%);
 }
 
@@ -405,11 +361,13 @@ a:hover, button:hover {
   top: calc(50% + 10px);
   left: calc(50% + 5px);
 }
+
 .benefits__rocket {
   width: 210px;
   top: calc(50% + 10px);
   left: calc(50% - 10px);
 }
+
 .benefits__money {
   width: 210px;
 }
@@ -444,17 +402,13 @@ a:hover, button:hover {
 
 .history__img-wrapper::before {
   content: "";
-
   width: 100%;
   height: 100%;
-
   position: absolute;
   top: 25px;
   left: -35px;
   z-index: -10;
-
   clip-path: polygon(67% 0, 100% 25%, 100% 100%, 0 100%, 0 0);
-
   background: #237249;
 }
 
@@ -490,15 +444,12 @@ a:hover, button:hover {
 
 .history__title::before {
   content: "";
-
   position: absolute;
   right: 60px;
   top: 30px;
   z-index: -5;
-
   width: 140px;
   height: 140px;
-
   border-radius: 100%;
   background: linear-gradient(245deg, rgba(35, 114, 73, 0.55) 0%, rgba(53, 198, 107, 0.73) 51.85%);
   filter: blur(90px);
@@ -506,7 +457,6 @@ a:hover, button:hover {
 
 .history__desc {
   margin-bottom: 60px;
-
   line-height: 163%;
   letter-spacing: -0.02em;
   color: #d9d9d9;
@@ -529,14 +479,11 @@ a:hover, button:hover {
 
 .card {
   position: relative;
-
   width: 270px;
   padding: 30px;
   padding-top: 50px;
-
   text-align: center;
   background-color: #121517;
-
   border-radius: 30px;
 }
 
@@ -547,7 +494,6 @@ a:hover, button:hover {
   z-index: -5;
   background: rgb(218,218,218);
   background: linear-gradient(110deg, rgba(218,218,218,0.7) 0%, rgba(218,218,218,0.07) 42%, rgba(218,218,218,0.7) 100%);
-   
   border-radius: 30px;
 }
 
@@ -570,7 +516,6 @@ a:hover, button:hover {
   display: inline-block;
   width: 190px;
   height: 190px;
-
   border-radius: 100%;
   background: linear-gradient(245deg, #237249 0%, #35c66b 100%);
   box-shadow: 0 4px 41px 0 rgba(0, 0, 0, 0.39);
@@ -580,9 +525,7 @@ a:hover, button:hover {
   position: absolute;
   top: -30px;
   left: 0px;
-
   width: 180px;
-
   filter: drop-shadow(0 4px 46px rgba(0, 0, 0, 0.48));
   transition: transform 0.5s;
 }
@@ -602,7 +545,6 @@ a:hover, button:hover {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-
   margin-bottom: 25px;
 }
 
@@ -629,7 +571,6 @@ a:hover, button:hover {
   grid-template-columns: 1fr 0.5fr 0.5fr 1fr;
   grid-template-areas:  "price price kitchen kitchen"
                         "free social social choose";
-
   position: relative;
 }
 
@@ -650,38 +591,32 @@ a:hover, button:hover {
 
 .events__inner-wrapper::after {
   content: "";
-
   position: absolute;
   bottom: -50px;
   right: 50%;
   z-index: -5;
-
   width: 320px;
   height: 270px;
-
   border-radius: 100%;
   background-color: rgba(217, 217, 217, 0.2);
   filter: blur(100px);
 }
 
 .event {
-  padding: 35px 30px 25px; /* Трохи скоригували паддінги для балансу */
+  padding: 35px 30px 25px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 30px;
-   
-  /* МАГІЯ ТУТ: Робимо картку флексом */
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Рівномірно розподіляє заголовок вгорі, а кнопку внизу */
-  align-items: flex-start; /* Вирівнює кнопку по лівому краю */
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .event__title {
-  margin-bottom: 20px; /* Замість великого 50px робимо гнучкий відступ */
-  max-width: 100%; /* Дозволяємо тексту розгортатися безпечно */
-   
+  margin-bottom: 20px;
+  max-width: 100%;
   font-weight: 500;
   font-size: 32px;
   line-height: 109%;
@@ -760,7 +695,6 @@ a:hover, button:hover {
   display: flex;
   align-items: center;
   gap: 20px;
-
   font-weight: 500;
   font-size: 32px;
   color: #fff;
@@ -779,7 +713,6 @@ a:hover, button:hover {
   position: relative;
 }
 
-/* светлячок-вспышка */
 .contacts__img-wrapper::before {
   content: "";
   position: absolute;
@@ -793,7 +726,6 @@ a:hover, button:hover {
   filter: blur(90px);
 }
 
-/* линии */
 .contacts__img-wrapper::after {
   content: "";
   width: 920px;
@@ -814,7 +746,6 @@ a:hover, button:hover {
   padding-right: 35px;
 }
 
-/* подложка-прямоугольник */
 .contacts__img-inner-wrapper::before {
   content: "";
   width: calc(100% - 35px);
@@ -827,7 +758,6 @@ a:hover, button:hover {
   background: #237249;
 }
 
-/* Текст we have */
 .contacts__img-inner-wrapper::after {
   content: "we\Ahave";
   white-space: pre-wrap;
@@ -866,7 +796,6 @@ a:hover, button:hover {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-
   margin-bottom: 85px;
 }
 
@@ -892,11 +821,9 @@ a:hover, button:hover {
 .footer__up-link {
   width: 85px;
   height: 85px;
-
   display: inline-flex;
   justify-content: center;
   align-items: center;
-
   border-radius: 30px;
   border: 1.5px solid transparent; 
   background: linear-gradient(#0b0c0d, #0b0c0d) padding-box, 
@@ -912,7 +839,6 @@ a:hover, button:hover {
   font-size: 26px;
 }
 
-/* АДАПТИВНІ МЕДІА ЗАПИТИ */
 @media (max-width: 1140px) {
   .benefits__container::after {
     left: 50px;
@@ -1093,7 +1019,6 @@ a:hover, button:hover {
     margin-bottom: 35px;
   }
 
-  /* ВИПРАВЛЕНО: Адаптовані кнопки під мобільні екрани без перекосів */
   .btn {
     font-size: 16px;
     padding: 0 30px;
@@ -1129,7 +1054,6 @@ a:hover, button:hover {
     filter: blur(60px);
   }
 
-  /* ТУТ ВИПРАВЛЕНО НАПЛИВАННЯ ТЕКСТУ В СТАТИСТИЦІ */
   .stats {
     gap: 20px 15px;
     justify-content: center;
@@ -1310,7 +1234,6 @@ a:hover, button:hover {
     grid-auto-rows: auto;
     grid-template-columns: 1fr 1fr;
     gap: 15px 25px;
-
     grid-template-areas:
     "price price"
     "free social"
@@ -1382,32 +1305,6 @@ a:hover, button:hover {
     right: -50px;
     top: 80px;
     filter: blur(60px);
-  }
-
-  .contacts__desc::before {
-    content: none;
-  }
-
-  .footer {
-    padding: 20px 0;
-  }
-
-  .logo {
-    font-size: 24px;
-  }
-
-  .footer__up-link {
-    width: 55px;
-    height: 55px;
-    border-radius: 18px;
-  }
-
-  .footer__arrow {
-    height: 27px;
-  }
-
-  .footer__phone {
-    font-size: 16px;
   }
 }
 
