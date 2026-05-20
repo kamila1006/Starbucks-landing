@@ -251,7 +251,7 @@
   </footer>
 
   <script>
-    // 1. Плавний скролл до якірних посилань (наприклад, кнопка "Обрати каву" плавно скролить до товарів)
+    
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -264,9 +264,9 @@
         });
     });
 
-    // 2. Анімація цифр лічильника (9k, 2k, 28) при завантаженні сторінки
+   
     document.addEventListener("DOMContentLoaded", () => {
-        const speed = 100; // швидкість анімації
+        const speed = 100; 
 
         const animateCounter = (counter) => {
             const target = +counter.getAttribute('data-target');
@@ -291,14 +291,14 @@
         });
     });
 
-    // 3. Інтерактивна кнопка "Купити продукт" (імітація додавання в кошик зі сповіщенням)
+ 
     document.querySelectorAll('.card__btn').forEach(button => {
         button.addEventListener('click', (e) => {
             const card = e.target.closest('.card');
             const productName = card.querySelector('.card__title').innerText;
             const productPrice = card.querySelector('.card__price').innerText;
             
-            alert(`🎉 Товар додано в кошик!\nНапій: ${productName}\nЦіна: ${productPrice}\nДякуємо за замовлення ліцею "ОСНОВА"!`);
+            alert(`Товар додано в кошик!\nНапій: ${productName}\nЦіна: ${productPrice}\nДякуємо за замовлення ліцею "ОСНОВА"!`);
         });
     });
   </script>
